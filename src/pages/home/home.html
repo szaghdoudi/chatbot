@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-navbar color="twitter">
+    <ion-title>
+      Chatbot
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  Hello!
+  <ion-list no-lines>
+  <ion-item *ngFor="let msg of messages" >
+    <chat-bubble [message]="msg"></chat-bubble>
+  </ion-item>
+</ion-list>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar position="bottom" color="twitter" style="padding-left:10px;">
+        <ion-input type="text" [(ngModel)]="userMsg"  style="background-color:white" placeholder="Type your message" ></ion-input>
+        <ion-buttons  end>
+     		<button ion-button color="light" (click)="handleSendMsg()"><span style="padding-right:10px">Send</span>
+     		<ion-icon name="send" ></ion-icon>
+     		</button>
+       </ion-buttons>
+   </ion-toolbar>
+</ion-footer>
